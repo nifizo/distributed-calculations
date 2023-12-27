@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="flight">
+    <xs:complexType>
+      <xs:attribute name="airline_id" type="xs:string"/>
+      <xs:attribute name="arrivalTime" type="xs:long"/>
+      <xs:attribute name="departureTime" type="xs:long"/>
+      <xs:attribute name="destination" type="xs:string"/>
+      <xs:attribute name="flightNumber" type="xs:string"/>
+      <xs:attribute name="flight_id" type="xs:string" use="required"/>
+      <xs:attribute name="origin" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="airline">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="flight" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="airline_id" type="xs:string" use="required"/>
+      <xs:attribute name="code" type="xs:string"/>
+      <xs:attribute name="country" type="xs:string"/>
+      <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="airlines">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="airline" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
+

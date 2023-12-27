@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://controller.example.org/" xmlns:tns="http://controller.example.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="findAllByAirline" type="tns:findAllByAirline"/>
+
+  <xs:element name="findAllByAirlineId" type="tns:findAllByAirlineId"/>
+
+  <xs:element name="findAllByAirlineIdResponse" type="tns:findAllByAirlineIdResponse"/>
+
+  <xs:element name="findAllByAirlineResponse" type="tns:findAllByAirlineResponse"/>
+
+  <xs:complexType name="findAllByAirline">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllByAirlineResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:flightDto" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="flightDto">
+    <xs:sequence>
+      <xs:element name="airlineId" type="xs:string" minOccurs="0"/>
+      <xs:element name="arrivalTime" type="xs:long" minOccurs="0"/>
+      <xs:element name="departureTime" type="xs:long" minOccurs="0"/>
+      <xs:element name="destination" type="xs:string" minOccurs="0"/>
+      <xs:element name="flightId" type="xs:string" minOccurs="0"/>
+      <xs:element name="flightNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="origin" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllByAirlineId">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllByAirlineIdResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:flightDto" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
